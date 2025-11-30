@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = class {
-    // 等待元素下所有圖片載入完成
+    // Wait for all images under the element to finish loading
     static imgLoad = async (children) => {
         for (const element of children) {
             if (element.tagName === "IMG" && !element.complete) {
@@ -14,10 +14,10 @@ module.exports = class {
         }
     };
 
-    // 等待
+    // wait
     static sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-    // 去抖動
+    // De-shake
     static debounce = (func, delay = 250) => {
         let timer = null;
 
@@ -31,7 +31,7 @@ module.exports = class {
         };
     };
 
-    // 節閥
+    // throttle valve
     static throttle = (func, timeout = 250) => {
         let last;
         let timer;

@@ -1,5 +1,5 @@
 module.exports = class {
-    // 格式化數字
+    // Formatting numbers
     static format = (number, digits = 3) => {
         if (typeof number !== 'number') {
             throw `${number} is not a number`;

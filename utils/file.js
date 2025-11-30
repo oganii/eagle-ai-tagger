@@ -4,7 +4,7 @@ const path = require('node:path');
 const crypto = require('node:crypto');
 
 module.exports = class {
-    // 建立文件資料夾
+    // Create file folder
     static createFolder = async (folderPath) => {
         folderPath = path.normalize(folderPath);
         try {
@@ -17,7 +17,7 @@ module.exports = class {
             throw error;
         }
     };
-    // 刪除文件資料夾
+    // Delete folder
     static deleteFolder = async (folderPath) => {
         folderPath = path.normalize(folderPath);
         try {
@@ -43,7 +43,7 @@ module.exports = class {
         }
     };
     static saveAs = async (sourcePath, targetPath) => {
-        // 檢查檔案是否存在
+        // Check if the file exists
         const hasFile = async (filePath) => {
             try {
                 await fs.promises.access(filePath);
@@ -70,7 +70,7 @@ module.exports = class {
             throw error;
         }
     };
-    // 儲存文件檔案
+    // Store file archives
     static save = async (filePath, data) => {
         const decodeBase64Image = (dataString) => {
             const matches = dataString.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
@@ -98,7 +98,7 @@ module.exports = class {
         }
     };
 
-    // 銷毀文件
+    // Destroy files
     static destroy = async (filePath) => {
         filePath = path.normalize(filePath);
         try {
@@ -118,7 +118,7 @@ module.exports = class {
             return false;
         }
     };
-    // 檢查檔名是否不同
+    // Check if the file names are different.
     static isEqualExt(ext, formatExt) {
         let a = ext.toLowerCase();
         if (a === 'jpg') a = 'jpeg';

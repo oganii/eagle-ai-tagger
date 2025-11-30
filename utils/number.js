@@ -1,5 +1,5 @@
 module.exports = class {
-    // 格式化數字
+    // Formatting numbers
     static format = (size, digits = 1) => {
         const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
         let i = 0;

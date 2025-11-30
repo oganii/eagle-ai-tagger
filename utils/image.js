@@ -1,8 +1,8 @@
 'use strict';
 const URL = require('url');
 module.exports = class {
-    // 解析度是否支援
-    // 檔案大小是否支援
+    // Does the resolution support this?
+    // Does the file size support this?
     static preVerify = async (
         inputFilePath,
         { checkSupportFileSize = true, checkSupportResolution = true }
@@ -36,9 +36,9 @@ module.exports = class {
         }
     };
 
-    // 檢查解析度是否相同
-    // 檢查檔案直方圖是否損壞
-    // 檢查檔案大小是否損壞
+    // Check if the resolution is the same
+    // Check if the file histogram is damaged.
+    // Check if the file size is corrupted.
     static postVerify = async (
         inputFilePath,
         outputFilePath,
@@ -127,7 +127,7 @@ module.exports = class {
         }
     };
 
-    // 建立圖片
+    // Create an image
     static create = async (url) => {
         try {
             const img = new Image();
@@ -146,7 +146,7 @@ module.exports = class {
         }
     };
 
-    // 轉換格式
+    // Convert format
     static convert = async (
         img,
         { type = 'png', quality = '1', area = { x: 0, y: 0, width: img.width, height: img.height } }
